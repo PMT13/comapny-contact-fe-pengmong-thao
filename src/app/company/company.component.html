@@ -1,0 +1,21 @@
+<div>Id: {{company.id}}</div>
+<div>Name: {{company.name}}</div>
+<div>Location: {{company.location}}</div>
+<div># of Employees: {{company.employees}}</div>
+<div>Contacts:
+  <div *ngFor="let contact of this.contactList">
+    <div>--- Name: {{contact.displayName}}</div>
+    <div>--- Email: {{contact.email}}</div>
+    <br>
+  </div>
+</div>
+<button (click)="deleteCompany()">Delete Company</button>
+<button (click)="isUpdating = true">Update Company</button>
+<button (click)="addContact()">Add Contact</button>
+<div *ngIf="isUpdating">
+  <label for="name">Company Name: </label>
+  <input id="name" name="name" type="text" [(ngModel)]="name">
+  <label for="location">Company Location: </label>
+  <input id="location" name="location" type="text" [(ngModel)]="location">
+  <button (click)="updateCompany()">Save</button>
+</div>

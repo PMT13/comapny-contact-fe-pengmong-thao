@@ -1,0 +1,8 @@
+<app-company *ngFor="let company of this.companyList" [company]="company"></app-company>
+<div>
+  <label for="name">Company Name: </label>
+  <input id="name" name="name" type="text" [(ngModel)]="name">
+  <label for="location">Company Location: </label>
+  <input id="location" name="location" type="text" [(ngModel)]="location">
+  <button (click)="addCompany()">Add Company</button>
+</div>
